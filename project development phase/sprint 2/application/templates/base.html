@@ -1,0 +1,34 @@
+<html>
+<body style="height: 100%">
+<style>
+    .header{display: flex;justify-content: center;font-size:18px; font-weight: 500;
+    padding: 20px; background-color: #4d4d4d; color: #fff;}
+    body{margin: 0px}
+    footer{position: absolute;bottom: 0; width:100%}
+</style>
+
+<header class="header">
+    EXPENSE TRACKER APP
+</header>
+
+
+<section>
+    
+{% block body %}
+{% endblock body %}
+</section>
+
+
+<footer>
+<br>
+<br>
+<div style="display:flex; justify-content:center; padding-top:20px"">
+    By logging in, you agree to our terms of service and privacy policy.
+Money transmission is provided by Expense Tracker Payments LLC (NMLS ID:2017010) pursuant to its licenses.
+   
+</div>
+<div  style="padding:10px 0px 30px; display: flex; justify-content:center">&copy; 2022</div> 
+</footer>
+
+</body>
+</html>

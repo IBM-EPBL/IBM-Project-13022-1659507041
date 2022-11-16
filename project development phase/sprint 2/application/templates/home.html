@@ -1,0 +1,141 @@
+{% extends "base.html" %} {% block body %}
+
+<style>
+  /* .profile-table{display: flex; justify-content:center; } */
+  .flex {
+    display: flex;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .table-dark {
+    padding: 10px;
+  }
+  .add-user {
+    display: flex;
+    justify-content: center;
+  }
+  .users-name {
+    text-decoration: none;
+    color: black;
+  }
+  .profile {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .profile-1{
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    color: #4d4d4d;
+  }
+  .profile-card-container {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .profile-card {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 20px;
+    background-color: #4d4d4d;
+    color: #ffff;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+  }
+  .profile-card:hover{
+    border: 1px;
+  }
+  .user-name{
+    padding-top: 20px;
+  }
+  .add-user-btn {
+    margin: 20px 0px 0px 20px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    background-color: #4d4d;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  tr {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+  }
+  tr :hover {
+    color: blue;
+  }
+</style>
+<br />
+<br />
+
+{% if users%}
+<div class="profile-table">
+    <div class="profile-1 flex justify-center">Get insights on your spending, set goals, and increase your savings.</div>
+  <div class="profile flex justify-center">Profile</div>
+  <div class="profile-card-container flex justify-center">
+    {% for user in users%}
+    <a href="/expenses?user={{ user.name }}">
+      <div class="profile-card flex justify-center">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+        <svg
+          version="1.1"
+          id="Capa_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          width="45.532px"
+          height="45.532px"
+          viewBox="0 0 45.532 45.532"
+          style="enable-background: new 0 0 45.532 45.532"
+          xml:space="preserve"
+        >
+          <g>
+            <path
+              d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765
+		S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53
+		c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012
+		c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592
+		c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"
+            />
+          </g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+        </svg>
+        <div class="user-name">{{ user.name }}</div>
+        
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+<div class="add-user">
+  <a href="/add_user" class="add-user-btn">Add a new user</a>
+</div>
+{% else%}
+<p>Ready to track your expenses?</p>
+
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/add_user"
+  ><div class="add-user-btn">Create your account</div></a
+>
+
+{% endif %} {% endblock body %}
